@@ -1,0 +1,4 @@
+com\springclouddemo\product\dao\ProductInfoDaoTest.class
+com\springclouddemo\product\service\ProductServiceTest.class
+com\springclouddemo\product\service\CategoryServiceTest.class
+com\springclouddemo\product\ProductApplicationTests.class

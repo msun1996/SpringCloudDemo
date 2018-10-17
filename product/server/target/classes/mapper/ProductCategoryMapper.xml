@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springclouddemo.product.dao.ProductCategoryDao">
+
+    <resultMap id="productCategoryMap" type="com.springclouddemo.product.domain.ProductCategory">
+        <id property="categoryId" column="category_id"/>
+        <result property="categoryName" column="category_name"/>
+        <result property="categoryType" column="category_type"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+    
+    <select id="findByCategoryTypeIn" parameterType="java.util.ArrayList" resultMap="productCategoryMap">
+        select * from product_category
+        where category_type in
+        <foreach collection="categoryTypeList" item="categoryType" index="index" open="(" close=")" separator=",">
+          #{categoryType}
+        </foreach>
+    </select>
+</mapper>

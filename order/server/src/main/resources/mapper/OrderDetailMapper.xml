@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springclouddemo.order.dao.OrderDetailDao">
+
+    <insert id="save" parameterType="com.springclouddemo.order.domain.OrderDetail">
+        insert into order_detail(detail_id,order_id,product_id,product_name,product_price,product_quantity,product_icon)
+        values (#{detailId},#{orderId},#{productId},#{productName},#{productPrice},#{productQuantity},#{productIcon})
+    </insert>
+
+</mapper>

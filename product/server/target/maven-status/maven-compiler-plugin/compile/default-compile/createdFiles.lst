@@ -1,0 +1,17 @@
+com\springclouddemo\product\service\impl\ProductServiceImpl.class
+com\springclouddemo\product\VO\ResultVO.class
+com\springclouddemo\product\exception\ProductException.class
+com\springclouddemo\product\utils\ResultVOUtil.class
+com\springclouddemo\product\service\CategoryService.class
+com\springclouddemo\product\enums\ResultEnum.class
+com\springclouddemo\product\service\ProductService.class
+com\springclouddemo\product\dao\ProductInfoDao.class
+com\springclouddemo\product\ProductApplication.class
+com\springclouddemo\product\controller\ProductController.class
+com\springclouddemo\product\VO\ProductVO.class
+com\springclouddemo\product\service\impl\CategoryServiceImpl.class
+com\springclouddemo\product\domain\ProductCategory.class
+com\springclouddemo\product\VO\ProductInfoVO.class
+com\springclouddemo\product\enums\ProductStatusEnum.class
+com\springclouddemo\product\domain\ProductInfo.class
+com\springclouddemo\product\dao\ProductCategoryDao.class

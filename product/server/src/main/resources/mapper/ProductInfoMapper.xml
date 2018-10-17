@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springclouddemo.product.dao.ProductInfoDao">
+
+    <resultMap id="productInfoMap" type="com.springclouddemo.product.domain.ProductInfo">
+        <id property="productId" column="product_id"/>
+        <result property="productName" column="product_name"/>
+        <result property="productPrice" column="product_price"/>
+        <result property="productStock" column="product_stock"/>
+        <result property="productDescription" column="product_description"/>
+        <result property="productIcon" column="product_icon"/>
+        <result property="productStatus" column="product_status"/>
+        <result property="categoryType" column="category_type"/>
+    </resultMap>
+
+    <!--根据产品信息状态查询-->
+    <select id="findByProductStatus" parameterType="Integer" resultMap="productInfoMap">
+        select * from product_info
+        where product_status = #{productStatus}
+    </select>
+
+    <!--根据产品id查询商品-->
+    <select id="findById" parameterType="java.lang.String" resultMap="productInfoMap">
+        select * from product_info
+        where product_id = #{productId}
+    </select>
+
+    <!--根据产品id列表查寻-->
+    <select id="findByProductIdIn" parameterType="java.util.List" resultMap="productInfoMap">
+        select * from product_info
+        where product_id in
+        <foreach collection="productIdList" item="productId" index="index" open="(" close=")" separator=",">
+            #{productId}
+        </foreach>
+    </select>
+
+    <!--更新商品信息-->
+    <insert id="updateProduct" parameterType="com.springclouddemo.product.domain.ProductInfo">
+        update product_info
+        <set>
+            <if test="productName != null and productName != ''">
+                product_name = #{productName},
+            </if>
+            <if test="productPrice != null">
+                product_price = #{productPrice},
+            </if>
+            <if test="productStock != null">
+                product_stock = #{productStock},
+            </if>
+            <if test="productDescription != null and productDescription != ''">
+                product_description = #{productDescription},
+            </if>
+            <if test="productIcon != null and productIcon != ''">
+                product_icon = #{productIcon},
+            </if>
+            <if test="productStatus != null">
+                product_status = #{productStatus},
+            </if>
+            <if test="categoryType != null">
+                category_type = #{categoryType}
+            </if>
+        </set>
+        where product_id = #{productId}
+    </insert>
+
+</mapper>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springclouddemo.order.dao.OrderMasterDao">
+
+    <insert id="save" parameterType="com.springclouddemo.order.domain.OrderMaster">
+        insert into order_master(order_id,buyer_name,buyer_phone,buyer_address,
+        buyer_openid,order_amount,order_status,pay_status)
+        values (#{orderId},#{buyerName},#{buyerPhone},#{buyerAddress},
+        #{buyerOpenid},#{orderAmount},#{orderStatus},#{payStatus})
+    </insert>
+
+</mapper>
