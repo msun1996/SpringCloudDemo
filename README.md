@@ -1,9 +1,63 @@
 # SpringCloudDemo
 商品微服务
 # Eureka 服务注册与发现
-- ***Eureka Server***  注册中心
-- ***Eureka Client***  服务注册
-(心跳连接)
+- ***Eureka Server***  注册中心  
+***pom***
+```java
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+</dependency>
+```
+***Application***加注解  
+```java
+@EnableEurekaServer
+```
+***application.yml***
+```yaml
+## spring配置
+spring:
+  application:
+    name: eureka
+## 端口
+server:
+  port: 8761
+## eureka相关配置
+eureka:
+  client:
+    # 服务端可选false不进行自注册
+    register-with-eureka: false
+    # 服务注册地址
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+```
+- ***Eureka Client***  服务注册  
+***pom***
+```java
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+```
+***Application***加注解  
+```java
+@EnableDiscoveryClient
+```
+***application.yml***
+```yaml
+spring:
+  application:
+    name: product
+# eureka配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+```
 ### 服务发现分两种方法
 - 客户端发现(客户端可知道后端服务数量，ip)
  - Eureka
@@ -16,7 +70,7 @@
 - RPC
  - Dubbo
 # SpringCloud应用间通信方式
-## 应用A
+## 应用A  
 - ***ServerController***
 ```java
 @RestController
@@ -30,7 +84,7 @@ public class ServerController {
 }
 ```
 ## 应用B
-### RestTemplate实现
+### RestTemplate实现  
 - ***ClientController***
 ```java
 package com.springclouddemo.order.controller;
@@ -107,7 +161,7 @@ public class RestTemplateConfig {
  - ServerList 获取所有可用服务列表
  - ServerListFilter 过滤一部分地址
  - IRule 选择一个实例作为请求地址
-### Feign实现（伪RPC通信）
+### Feign实现（伪RPC通信）  
 - ***pom***
 ```
 <dependency>
@@ -115,7 +169,7 @@ public class RestTemplateConfig {
     <artifactId>spring-cloud-starter-feign</artifactId>
     <version>1.4.5.RELEASE</version>
 </dependency>
-```
+```  
 - ***Application***加注解
 ```java
 @EnableFeignClients
