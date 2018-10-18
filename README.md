@@ -192,7 +192,7 @@ public interface ProductClient {
 }
 
 ```
-- ***CleintController***
+- ***ClientController***
 ```java
 package com.springclouddemo.order.controller;
 
