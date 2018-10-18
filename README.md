@@ -169,12 +169,12 @@ public class RestTemplateConfig {
     <artifactId>spring-cloud-starter-feign</artifactId>
     <version>1.4.5.RELEASE</version>
 </dependency>
-```  
-- ***Application***加注解
+``` 
+- ***Application*** 加注解
 ```java
 @EnableFeignClients
 ```
-- ***client.ProductClient***服务端请求映射
+- ***client.ProductClient*** 服务端请求映射
 ```java
 package com.springclouddemo.order.client;
 
