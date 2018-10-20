@@ -15,6 +15,7 @@ import com.springclouddemo.order.utils.KeyUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -38,6 +39,7 @@ public class OrderServiceImpl implements OrderService {
     private ProductClient productClient;
 
     @Override
+    @Transactional
     public OrderDTO create(OrderDTO orderDTO) {
 
         String orderId = KeyUtil.genUniqueKey();
@@ -78,5 +80,10 @@ public class OrderServiceImpl implements OrderService {
 
         orderMasterDao.save(orderMaster);
         return orderDTO;
+
+        // 异步扣库存分析
+        // 1.库存在redis保存副本
+        // 2.收到请求redis判断库存充足，减掉redis库存
+        // 3.订单服务创建订单写入数据库，并发送消息
     }
 }
