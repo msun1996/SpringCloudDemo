@@ -13,4 +13,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface OrderMasterDao {
     void save(OrderMaster orderMaster);
+    void update(OrderMaster orderMaster);
+    OrderMaster findById(String orderId);
 }

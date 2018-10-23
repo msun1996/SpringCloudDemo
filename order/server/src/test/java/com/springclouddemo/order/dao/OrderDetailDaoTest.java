@@ -28,4 +28,9 @@ public class OrderDetailDaoTest extends OrderApplicationTests {
         orderDetail.setProductQuantity(1);
         orderDetailDao.save(orderDetail);
     }
+
+    @Test
+    public void findByOrderId() {
+        orderDetailDao.findByOrderId("1111");
+    }
 }

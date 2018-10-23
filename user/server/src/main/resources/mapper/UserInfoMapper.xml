@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springclouddemo.user.dao.UserInfoDao">
+
+
+    <resultMap id="UserInfoMap" type="com.springclouddemo.user.domain.UserInfo">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="openid" column="openid"/>
+        <result property="role" column="role"/>
+    </resultMap>
+
+    <select id="findByOpenid" parameterType="java.lang.String" resultMap="UserInfoMap">
+        select * from user_info
+        where openid=#{openid}
+    </select>
+
+</mapper>

@@ -4,6 +4,8 @@ import com.springclouddemo.order.domain.OrderDetail;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * 订单详情
  * author: mSun
@@ -13,4 +15,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface OrderDetailDao {
     void save(OrderDetail orderDetail);
+    List<OrderDetail> findByOrderId(String orderId);
 }

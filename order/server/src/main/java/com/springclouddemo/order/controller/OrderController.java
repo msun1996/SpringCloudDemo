@@ -7,13 +7,14 @@ import com.springclouddemo.order.enums.ResultEnum;
 import com.springclouddemo.order.exception.OrderException;
 import com.springclouddemo.order.form.OrderForm;
 import com.springclouddemo.order.service.OrderService;
-import com.springclouddemo.order.utils.ResultUtil;
+import com.springclouddemo.order.utils.ResultVOUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
@@ -51,6 +52,11 @@ public class OrderController {
 
         Map<String, String> map = new HashMap<>();
         map.put("orderId", orderDTO1.getOrderId());
-        return ResultUtil.success(map);
+        return ResultVOUtil.success(map);
+    }
+
+    @PostMapping("/finish")
+    public ResultVO<OrderDTO> finish(@RequestParam("orderId") String orderId) {
+        return ResultVOUtil.success(orderService.finish(orderId));
     }
 }

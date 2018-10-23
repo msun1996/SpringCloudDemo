@@ -29,4 +29,9 @@ public class OrderMasterDaoTest extends OrderApplicationTests {
         orderMaster.setPayStatus(PayStatusEnum.WAIT.getCode());
         orderMasterDao.save(orderMaster);
     }
+
+    @Test
+    public void findById() {
+        orderMasterDao.findById("1111");
+    }
 }
