@@ -224,3 +224,331 @@ public class ClientController {
 }
 
 ```
+# 网关Zuul
+## Zuul特点
+- 路由+过滤器
+## Zuul四种过滤器API
+- 前置(Pre)
+ - 限流
+ - 鉴权
+ - 参数校验
+- 路由(Route)
+- 后置(Post)
+ - 统计
+ - 日志
+- 错误(Error)
+![](index_files/7504646.png)
+## 基本配置使用
+***pom***
+```
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+</dependency>
+```
+***Application注解***
+```java
+@EnableZuulProxy
+```
+***application配置文件***
+```yaml
+zuul:
+  # 全局cookie透传
+  sensitive-headers:
+  routes:
+  # 路由配置
+  # /myProduct/product/list -> /product/product/list
+    myProduct:
+      path: /myProduct/**
+      serviceId: product
+      # cookie 设置空表示透传
+      sensitiveHeaders:
+    # 简写
+#    product: /myProduct/**
+  # 路由过滤(不允许访问路由)
+  ignored-patterns:
+    - /**/product/list
+```
+***ZuulConfig 动态路由配置***
+```java
+/**
+ * Zuul动态路由自动配置注入(配合配置中心使用)
+ * author: mSun
+ * date: 2018/10/22
+ */
+@Component
+public class ZuulConfig {
+
+    @RefreshScope
+    @ConfigurationProperties("zuul")
+    public ZuulProperties zuulProperties() {
+        return new ZuulProperties();
+    }
+}
+```
+## Filter
+#### 前置FRE 过滤器
+```java
+/**
+ * 前置拦截器
+ * author: mSun
+ * date: 2018/10/22
+ */
+@Component
+public class TokenFilter extends ZuulFilter {
+
+    // 过滤器类型
+    @Override
+    public String filterType() {
+        return PRE_TYPE;
+    }
+
+    // 过滤器位置
+    @Override
+    public int filterOrder() {
+        return PRE_DECORATION_FILTER_ORDER - 1;
+    }
+
+    @Override
+    public boolean shouldFilter() {
+        return true;
+    }
+
+    @Override
+    public Object run() throws ZuulException {
+        RequestContext requestContext =RequestContext.getCurrentContext();
+        HttpServletRequest request = requestContext.getRequest();
+        // 从url参数获取，也可从cookie、header获取
+        String token = request.getParameter("token");
+        if (StringUtils.isEmpty(token)) {
+            requestContext.setSendZuulResponse(false);
+            requestContext.setResponseStatusCode(HttpStatus.UNAUTHORIZED.value());
+        }
+        return null;
+    }
+}
+
+```
+#### 后置POST 过滤器
+```java
+/**
+ * 后置拦截器
+ * author: mSun
+ * date: 2018/10/22
+ */
+@Component
+public class AddResponseHeaderFilter extends ZuulFilter {
+    @Override
+    public String filterType() {
+        return POST_TYPE;
+    }
+
+    @Override
+    public int filterOrder() {
+        return SEND_RESPONSE_FILTER_ORDER - 1;
+    }
+
+    @Override
+    public boolean shouldFilter() {
+        return true;
+    }
+
+    @Override
+    public Object run() throws ZuulException {
+        RequestContext requestContext = RequestContext.getCurrentContext();
+        HttpServletResponse response = requestContext.getResponse();
+        response.setHeader("X-Foo", UUID.randomUUID().toString());
+        return null;
+    }
+}
+```
+## 限流拦截
+```java
+/**
+ * 限流拦截器
+ * author: mSun
+ * date: 2018/10/22
+ */
+@Component
+public class RateLimitFilter extends ZuulFilter {
+
+    // 限流令牌桶算法，取得令牌数。类似买房发号。
+    private static final RateLimiter RATE_LIMITER = RateLimiter.create(100);
+
+    @Override
+    public String filterType() {
+        return PRE_TYPE;
+    }
+
+    // 级别最高，所有过滤器之前
+    @Override
+    public int filterOrder() {
+        return SERVLET_DETECTION_FILTER_ORDER - 1;
+    }
+
+    @Override
+    public boolean shouldFilter() {
+        return true;
+    }
+
+    @Override
+    public Object run() throws ZuulException {
+
+        // 取令牌，如果没有抛异常。
+        if (!RATE_LIMITER.tryAcquire()) {
+            throw new RateLimitException();
+        }
+        return null;
+    }
+}
+```
+# Hystrix
+- 服务降级
+- 依赖隔离
+- 服务熔断
+- 监控(Hystrix Dashboard)
+## 服务降级
+- 优先核心服务，非核心服务不可用或弱可以
+- 通过HysrixCommand注解指定
+- fallbackMethod实现降级逻辑
+***pom***
+```
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-hystrix</artifactId>
+    <version>1.4.5.RELEASE</version>
+</dependency>
+```
+***Application***
+```java
+//@SpringBootApplication
+//@EnableDiscoveryClient
+//@EnableCircuitBreaker
+@SpringCloudApplication
+```
+***测试Controller***
+```java
+/**
+ * Hystrix测试用例
+ * author: mSun
+ * date: 2018/10/23
+ */
+@RestController
+// 默认降级调用，@HystrixCommand可不写回调方法
+@DefaultProperties(defaultFallback = "defaultFallback")
+public class HystrixController {
+
+    // 异常降级，fallbackMethod回调fallback
+    // 超时降级设置，默认1000ms
+//    @HystrixCommand(fallbackMethod = "fallback",commandProperties = {
+//            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "2000")
+//    })
+    // 熔断配置
+    @HystrixCommand(commandProperties = {
+            @HystrixProperty(name = "circuitBreaker.enabled", value = "true"), //设置熔断
+            // 请求次数达到10次后，错误率超过60%,服务默认休眠（不可用）1000ms
+            @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"), // 请求次数达到数
+            @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "1000"), // 默认服务不可用时间
+            @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60") // 错误率
+    })
+    @GetMapping("/getProductInfoList")
+    public String getProductInfoList() {
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.postForObject("http://127.0.0.1:8080/product/listForOrder",
+                Arrays.asList("157875227953464068"),
+                String.class);
+//        throw new RuntimeException("抛错，降级回调");
+    }
+
+    // 回调
+    private String fallback() {
+        return "太拥挤了（服务异常）";
+    }
+
+    private String defaultFallback() {
+        return "默认降级回调方法";
+    }
+}
+
+```
+#### 设置默认熔断器配置
+***application.yml***
+```
+# 熔断器默认配置
+hystrix:
+  command:
+    # default可修改成其他名
+    default:
+      # 此处配置具体参数（见HystrixCommandProperties类）
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000
+```
+***调用conttroller***
+```java
+// 熔断设置（commandKey默认default，可设置对应名）
+@HystrixCommand(commandKey="")
+```
+### 熔断可视化
+***pom***
+```
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+    <version>1.4.5.RELEASE</version>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+```
+***Application***
+```
+@EnableHystrixDashboard
+```
+***application.yml***
+```
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+```
+访问http://127.0.0.1/hystrix 按示例填写
+# 服务追踪
+***pom***
+```
+<!--包含sleuth和zipkin-->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-zipkin</artifactId>
+</dependency>
+<!--<dependency>-->
+    <!--<groupId>org.springframework.cloud</groupId>-->
+    <!--<artifactId>spring-cloud-starter-sleuth</artifactId>-->
+<!--</dependency>-->
+<!--<dependency>-->
+    <!--<groupId>org.springframework.cloud</groupId>-->
+    <!--<artifactId>spring-cloud-sleuth-zipkin</artifactId>-->
+<!--</dependency>-->
+```
+引入即开启
+***application.yml*** 调整日志级别，数据进行外部传输
+```
+logging:
+  level:
+    org.springframework.cloud.openfeign: debug
+spring:
+  zipkin:
+    base-url: http://127.0.0.1:9411/
+  sleuth:
+    sampler:
+      # 采集百分比（默认0.1）
+      probability: 1
+```
+使用zipkin查看路由追踪(https://zipkin.io/)
