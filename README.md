@@ -66,9 +66,9 @@ eureka:
  - Zookeeper
 # 微服务通信方式
 - HTTP
- - SpringCloud
+  - SpringCloud
 - RPC
- - Dubbo
+  - Dubbo
 # SpringCloud应用间通信方式
 ## 应用A  
 - ***ServerController***
