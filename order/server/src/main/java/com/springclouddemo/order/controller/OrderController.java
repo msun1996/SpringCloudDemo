@@ -34,7 +34,7 @@ public class OrderController {
     private OrderService orderService;
 
     @PostMapping("/create")
-    public ResultVO<Map<String, String>> create(@Valid OrderForm orderForm,
+    public ResultVO create(@Valid OrderForm orderForm,
                                                 BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             log.error("【创建订单】 参数不正确，orderForm={}", orderForm);
@@ -56,7 +56,7 @@ public class OrderController {
     }
 
     @PostMapping("/finish")
-    public ResultVO<OrderDTO> finish(@RequestParam("orderId") String orderId) {
+    public ResultVO finish(@RequestParam("orderId") String orderId) {
         return ResultVOUtil.success(orderService.finish(orderId));
     }
 }

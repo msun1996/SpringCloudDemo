@@ -1,6 +1,5 @@
 package com.springclouddemo.product.service.impl;
 
-import com.rabbitmq.tools.json.JSONUtil;
 import com.springCloudDemo.product.common.DecreaseStockInput;
 import com.springCloudDemo.product.common.ProductInfoOutput;
 import com.springclouddemo.product.dao.ProductInfoDao;

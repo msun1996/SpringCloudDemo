@@ -30,6 +30,7 @@ public class OrderForm2OrderDTO {
 
         Gson gson = new Gson();
         try {
+            // json字符串转换为对象实体
             orderDetailList = gson.fromJson(orderForm.getItems(),
                     new TypeToken<List<OrderDetail>>() {
                     }.getType());

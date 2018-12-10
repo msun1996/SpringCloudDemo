@@ -5,6 +5,7 @@ D:\IDEA Project\SpringCloudDemo\product\server\src\main\java\com\springclouddemo
 D:\IDEA Project\SpringCloudDemo\product\server\src\main\java\com\springclouddemo\product\controller\ProductController.java
 D:\IDEA Project\SpringCloudDemo\product\server\src\main\java\com\springclouddemo\product\enums\ProductStatusEnum.java
 D:\IDEA Project\SpringCloudDemo\product\server\src\main\java\com\springclouddemo\product\ProductApplication.java
+D:\IDEA Project\SpringCloudDemo\product\server\src\main\java\com\springclouddemo\product\utils\JsonUtil.java
 D:\IDEA Project\SpringCloudDemo\product\server\src\main\java\com\springclouddemo\product\dao\ProductInfoDao.java
 D:\IDEA Project\SpringCloudDemo\product\server\src\main\java\com\springclouddemo\product\domain\ProductInfo.java
 D:\IDEA Project\SpringCloudDemo\product\server\src\main\java\com\springclouddemo\product\exception\ProductException.java
