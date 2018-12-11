@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          # github项目地址
+          uri: https://github.com/msun1996/SpringCloudDemo
+          # 配置存储配置文件路径
+          search-paths: config-repo
+          username: msun1996
+          password: *
+          strict-host-key-checking: false
+          # 本地存放目录
+          # basedir: C:/Users/HANZHA~1/AppData/Local/Temp/config-repo-4928935862373680079/config-repo/user.yml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

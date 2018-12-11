@@ -1,123 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="47b001c3-cc24-4629-9fa0-6929c10bf126" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/thriftCompiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/src/main/java/com/springclouddemo/order/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/src/main/java/com/springclouddemo/order/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/src/main/java/com/springclouddemo/order/converter/OrderForm2OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/src/main/java/com/springclouddemo/order/converter/OrderForm2OrderDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/DTO/OrderDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/DTO/OrderDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/OrderApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/OrderApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/VO/ResultVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/VO/ResultVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/controller/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/converter/OrderForm2OrderDTO$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/converter/OrderForm2OrderDTO$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/converter/OrderForm2OrderDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/converter/OrderForm2OrderDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/dao/OrderDetailDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/dao/OrderDetailDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/dao/OrderMasterDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/dao/OrderMasterDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/domain/OrderDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/domain/OrderDetail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/domain/OrderMaster.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/domain/OrderMaster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/enums/OrderStatusEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/enums/OrderStatusEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/enums/PayStatusEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/enums/PayStatusEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/enums/ResultEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/enums/ResultEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/exception/OrderException.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/exception/OrderException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/form/OrderForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/form/OrderForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/message/MqReceiver.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/message/MqReceiver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/message/ProductInfoReceiver$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/message/ProductInfoReceiver$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/message/ProductInfoReceiver.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/message/ProductInfoReceiver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/message/StreamReceiver.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/message/StreamReceiver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/service/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/service/OrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/service/impl/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/service/impl/OrderServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/utils/JsonUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/utils/JsonUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/utils/ResultVOUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/target/classes/com/springclouddemo/order/utils/ResultVOUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/client/src/main/java/com/springCloudDemo/product/client/ProductClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/client/src/main/java/com/springCloudDemo/product/client/ProductClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/client/target/product-client-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../product/client/target/product-client-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../product/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/common/src/main/java/com/springCloudDemo/product/common/DecreaseStockInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/common/src/main/java/com/springCloudDemo/product/common/DecreaseStockInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/common/src/main/java/com/springCloudDemo/product/common/ProductInfoOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/common/src/main/java/com/springCloudDemo/product/common/ProductInfoOutput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/common/target/classes/com/springCloudDemo/product/common/DecreaseStockInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/../product/common/target/classes/com/springCloudDemo/product/common/DecreaseStockInput.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/common/target/classes/com/springCloudDemo/product/common/ProductInfoOutput.class" beforeDir="false" afterPath="$PROJECT_DIR$/../product/common/target/classes/com/springCloudDemo/product/common/ProductInfoOutput.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/common/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/common/target/product-common-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../product/common/target/product-common-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/doc/product.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/doc/product.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/VO/ProductInfoVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/VO/ProductInfoVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/VO/ProductVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/VO/ProductVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/VO/ResultVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/VO/ResultVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/dao/ProductCategoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/dao/ProductCategoryDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/dao/ProductInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/dao/ProductInfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/domain/ProductCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/domain/ProductCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/domain/ProductInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/domain/ProductInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/enums/ProductStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/enums/ProductStatusEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/enums/ResultEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/enums/ResultEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/exception/ProductException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/exception/ProductException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/service/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/service/impl/CategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/utils/JsonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/utils/JsonUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/utils/ResultVOUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/java/com/springclouddemo/product/utils/ResultVOUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/main/resources/mapper/ProductCategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/resources/mapper/ProductCategoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/main/resources/mapper/ProductInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/resources/mapper/ProductInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/test/java/com/springclouddemo/product/dao/ProductInfoDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/test/java/com/springclouddemo/product/dao/ProductInfoDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/test/java/com/springclouddemo/product/service/CategoryServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/test/java/com/springclouddemo/product/service/CategoryServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/src/test/java/com/springclouddemo/product/service/ProductServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/test/java/com/springclouddemo/product/service/ProductServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/ProductApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/ProductApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/VO/ProductInfoVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/VO/ProductInfoVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/VO/ProductVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/VO/ProductVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/VO/ResultVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/VO/ResultVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/controller/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/dao/ProductCategoryDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/dao/ProductCategoryDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/dao/ProductInfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/dao/ProductInfoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/domain/ProductCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/domain/ProductCategory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/domain/ProductInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/domain/ProductInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/enums/ProductStatusEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/enums/ProductStatusEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/enums/ResultEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/enums/ResultEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/exception/ProductException.class" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/exception/ProductException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/service/CategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/service/CategoryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/service/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/service/impl/CategoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/service/impl/CategoryServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/service/impl/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/service/impl/ProductServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/utils/JsonUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/utils/JsonUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/utils/ResultVOUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/classes/com/springclouddemo/product/utils/ResultVOUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/classes/mapper/ProductCategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/classes/mapper/ProductCategoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/classes/mapper/ProductInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/classes/mapper/ProductInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/product-server-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/product-server-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/surefire-reports/TEST-com.springclouddemo.product.ProductApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/surefire-reports/TEST-com.springclouddemo.product.ProductApplicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/surefire-reports/TEST-com.springclouddemo.product.dao.ProductInfoDaoTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/surefire-reports/TEST-com.springclouddemo.product.dao.ProductInfoDaoTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/surefire-reports/TEST-com.springclouddemo.product.service.CategoryServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/surefire-reports/TEST-com.springclouddemo.product.service.CategoryServiceTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/surefire-reports/TEST-com.springclouddemo.product.service.ProductServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/surefire-reports/TEST-com.springclouddemo.product.service.ProductServiceTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/surefire-reports/com.springclouddemo.product.dao.ProductInfoDaoTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/surefire-reports/com.springclouddemo.product.dao.ProductInfoDaoTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/surefire-reports/com.springclouddemo.product.service.CategoryServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/surefire-reports/com.springclouddemo.product.service.CategoryServiceTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product/server/target/surefire-reports/com.springclouddemo.product.service.ProductServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/target/surefire-reports/com.springclouddemo.product.service.ProductServiceTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/UserApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/UserApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/VO/ResultVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/VO/ResultVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/dao/UserInfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/dao/UserInfoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/domain/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/domain/UserInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/enums/ResultEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/enums/ResultEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/enums/RoleEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/enums/RoleEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/service/impl/UserSeriveImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/service/impl/UserSeriveImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/utils/CookieUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/utils/CookieUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/utils/ResultVOUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/springclouddemo/user/utils/ResultVOUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user.iml" beforeDir="false" />
-    </list>
+    <list default="true" id="47b001c3-cc24-4629-9fa0-6929c10bf126" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/server/target/" />
@@ -222,7 +106,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="960" />
     <option name="height" value="1032" />
   </component>
@@ -252,45 +136,7 @@
               <item name="user" type="b2602c69:ProjectViewProjectNode" />
               <item name="user" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="doc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="user" type="b2602c69:ProjectViewProjectNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="user" type="b2602c69:ProjectViewProjectNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="user" type="b2602c69:ProjectViewProjectNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="user" type="b2602c69:ProjectViewProjectNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="user" type="b2602c69:ProjectViewProjectNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -306,10 +152,10 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544433991492" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544434932474" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../CdnMonitorBackground" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -403,7 +249,7 @@
       <workItem from="1543402348359" duration="473000" />
       <workItem from="1543403722038" duration="40000" />
       <workItem from="1544420843369" duration="928000" />
-      <workItem from="1544423249072" duration="4321000" />
+      <workItem from="1544423249072" duration="4965000" />
     </task>
     <servers />
   </component>
@@ -422,12 +268,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24904000" />
+    <option name="totallyTimeSpent" value="25548000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="960" height="1032" extended-state="1" />
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.3758465" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.37553647" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -437,7 +283,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.48502305" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4751693" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
