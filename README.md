@@ -552,3 +552,134 @@ spring:
       probability: 1
 ```
 使用zipkin查看路由追踪(https://zipkin.io/)
+# ConfigServer统一配置
+*  方便维护
+*  配置内容安全与权限
+*  更新配置项目需要重启解决
+## 基本架构图
+![](doc/ConfigServer.jpg)
+
+## 基本配置使用(环境有git)
+### Server端
+***pom***
+```
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-config-server</artifactId>
+</dependency>
+```
+***Application加注解***
+```java
+@EnableDiscoveryClient
+@EnableConfigServer
+```
+***application.yml***
+```yaml
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          # github项目地址
+          uri: https://github.com/msun1996/SpringCloudDemo
+          # 配置存储配置文件路径
+          search-paths: config-repo
+          username: msun1996
+          password: hzy960304
+          strict-host-key-checking: false
+          # 本地存放目录
+          # basedir: C:/Users/HANZHA~1/AppData/Local/Temp/config-repo-4928935862373680079/config-repo/user.yml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+```
+***测试访问***
+```
+# github地址：https://github.com/msun1996/SpringCloudDemo/blob/master/config-repo/user.yml
+# 访问地址：http://127.0.0.1:8080/user-dev.yml
+## 常用访问格式：
+/{name}-{profiles}.yml
+/{label}/{name}-{profiles}.yml
+name 服务名
+profiles 环境
+label 分支(branch)
+(如果环境中有a.yml,a-dev.yml, 配置文件读取a-dev.yml时会读取a.yml,a-dev.yml配置文件合并后文件作为配置文件)
+```
+
+### Client端
+***pom***
+```
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-config-client</artifactId>
+</dependency>
+```
+***bootstrap.yml***
+> 必须使用bootstrap.yml,在所有程序启动前运行拉取配置文件
+```yaml
+spring:
+  application:
+    name: user
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG
+      profile: dev
+# 通过eureka获取CONFIG服务，需配置这里
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+```
+
+## SpringCloud Bus配置动态刷新
+### Server端
+***pom***
+```
+<dependency>
+ <groupId>org.springframework.cloud</groupId>
+ <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+</dependency>
+```
+***application.yml***
+```yaml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+# rabbitmq使用默认连接,可以不配，使用匿名用户创建
+#spring:
+#  rabbitmq:
+#    host: 127.0.0.1
+#    port: 5672
+#    username: guest
+#    password: guest
+```
+### Client端
+***pom***
+```
+<dependency>
+ <groupId>org.springframework.cloud</groupId>
+ <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+</dependency>
+```
+***config.java(或属性配置类上加注解)***
+```java
+# 加注解才会生效
+@RefreshScope
+```
+### github配置Webhook
+```java
+（手动请求刷新 post 127.0.0.1:8080/actuator/bus-refresh )
+设置地址： http://127.0.0.1:8080/actuator/bus-refresh (http://127.0.0.1:8080/monitor)
+格式：application/json
+```
